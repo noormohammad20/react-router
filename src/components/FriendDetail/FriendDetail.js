@@ -5,12 +5,13 @@ const FriendDetail = () => {
     const [friend, setFriend] = useState({})
 
     useEffect(() => {
-        const url = `https://jsonplaceholder.typicode.com/users/${friendId}`
+        let url = `https://jsonplaceholder.typicode.com/users/${friendId}`
 
         fetch(url)
             .then(res => res.json())
             .then(data => setFriend(data))
     }, [])
+
     const { friendId } = useParams()
     return (
         <div>
